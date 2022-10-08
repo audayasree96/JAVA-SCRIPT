@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<head>
+<script>
+function pg()
+{
+	var x=document.getElementById("mySelect");
+	var i=x.selectedIndex;
+	if (x.options[i].text == "CELCIUS")
+	{
+		var no,ans;
+		no=Number(document.getElementById("n").value);
+		ans=((9/5)*no)+32;
+		
+		document.getElementById("ans").innerHTML=ans+"F";
+	}
+	else if (x.options[i].text == "FARENHEIT")
+	{
+		var no,ans;
+		no=Number(document.getElementById("n").value);
+		ans=((5/9)*no)-32;
+		
+		document.getElementById("ans").innerHTML=ans+"C";
+	}
+	
+	
+}
+
+
+
+</script>
+</head>
+<body>
+
+
+	<h1>TEMPERATURE CONVERTER</h1>
+	TEMPARATURE :<input type="number" id="n">
+	<form>
+	<label > Select Temparature unit</label> 
+	<select id="mySelect" >	
+		 <option  id="1" value="select">select </option>
+		 <option  id="1" value="celcius">CELCIUS</option>
+		 <option  id="2"  value="farenheit">FARENHEIT</option>
+	</select>
+	</form>
+	<button type="submit" onclick="pg()">SUBMIT</button><br><br>
+	SOLUTION: <p id="ans"></p>
+               
+</body>
+</html>
